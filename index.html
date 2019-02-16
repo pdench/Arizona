@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Arizona 2018</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/styles.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body id="home">
+	    <div class="container">
+		    <div class="row">
+			    <div class="col-sm-12">
+                    <p class="text-center text-primary bg-primary h3">Countdown to flight leaving Boston:</p>
+                    <p id="clock" class="text-center text-primary bg-primary h3"></p>
+                </div>
+                <p class="text-center hidden">
+                    <div class="row col-sm-8">
+                        <table class="table table-striped table-bordered table-condensed table-responsive">
+                            <tr>
+                                <td>April 28</td>
+                                <td>Lookout Mountain</td>
+                            </tr>
+                            <tr>
+                                <td>April 29</td>
+                                <td>Trilogy</td>
+                            </tr>
+                            <tr>
+                                <td>April 30</td>
+                                <td>Quintero</td>
+                            </tr>
+                            <tr>
+                                <td>May 1</td>
+                                <td>Sedona</td>
+                            </tr>
+                            <tr>
+                                <td>May 2</td>
+                                <td>TPC Champions</td>
+                            </tr>
+                            <tr>
+                                <td>May 3</td>
+                                <td>TPC Stadium</td>
+                            </tr>
+                            <tr>
+                                <td>May 4</td>
+                                <td>Verado</td>
+                            </tr>
+                        </table>
+                    </div>
+                </p>
+
+        </div>
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		</div>
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("April 27, 2019 06:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="clock"
+  document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("clock").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+	</body>
+
+</html>
